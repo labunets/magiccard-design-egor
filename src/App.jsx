@@ -5,6 +5,7 @@ import CompanyStats from './components/CompanyStats';
 import Partners from './components/Partners';
 import WhyChoose from './components/WhyChoose';
 import OurClients from './components/OurClients';
+import HowToUse from './components/HowToUse';
 import FloatingButton from './components/FloatingButton';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Partners />
       <WhyChoose />
       <OurClients />
+      <HowToUse />
       <FloatingButton />
     </Box>
   );
