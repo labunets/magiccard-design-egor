@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import CompanyStats from './components/CompanyStats';
 import Partners from './components/Partners';
 import WhyChoose from './components/WhyChoose';
+import OurClients from './components/OurClients';
 import FloatingButton from './components/FloatingButton';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <CompanyStats />
       <Partners />
       <WhyChoose />
+      <OurClients />
       <FloatingButton />
     </Box>
   );
