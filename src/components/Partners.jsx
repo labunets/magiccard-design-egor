@@ -1,175 +1,105 @@
-import { Box, Container, Typography, Grid, Button } from '@mui/material';
+import { Box, Container, Typography, Button, Grid } from '@mui/material';
+import partner1 from '../assets/partner_1.jpg';
+import partner2 from '../assets/partner_2.jpg';
+import partner3 from '../assets/partner_3.jpg';
+import partner4 from '../assets/partner_4.jpg';
+import partner5 from '../assets/partner_5.jpg';
+import partner6 from '../assets/partner_6.jpg';
+import partner7 from '../assets/partner_7.jpg';
+import partner8 from '../assets/partner_8.jpg';
+import partner9 from '../assets/partner_9.jpg';
+import partner10 from '../assets/partner_10.jpg';
+import partner11 from '../assets/partner_11.png';
+import partner12 from '../assets/partner_12.jpg';
 
-// Список партнерів (назви магазинів)
 const partners = [
-  { name: 'Rozetka', bgColor: '#05BC52' },
-  { name: 'Silpo', bgColor: '#FF8522' },
-  { name: 'ATB', bgColor: '#E52027' },
-  { name: 'Auchan', bgColor: '#FDEDEF' },
-  { name: 'JYSK', bgColor: '#034694' },
-  { name: 'Foxtrot', bgColor: '#E95D2A' },
-  { name: 'Comfy', bgColor: '#43B02A' },
-  { name: 'Епіцентр', bgColor: '#F7931E' },
-  { name: 'WOG', bgColor: '#ED1C24' },
-  { name: 'ОККО', bgColor: '#0066B3' },
-  { name: 'Avon', bgColor: '#FFFFFF' },
-  { name: 'Mary Kay', bgColor: '#EE5BA1' },
+  partner1,
+  partner2,
+  partner3,
+  partner4,
+  partner5,
+  partner6,
+  partner7,
+  partner8,
+  partner9,
+  partner10,
+  partner11,
+  partner12,
 ];
 
 function Partners() {
   return (
     <Box sx={{ py: { xs: 6, md: 10 }, backgroundColor: 'white' }}>
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{ px: { xs: '16px', md: 3 } }}>
         {/* Заголовок */}
         <Typography
-          variant="h3"
-          textAlign="center"
+          variant="h2"
+          textAlign="left"
           sx={{
-            mb: 2,
+            mb: 4,
             fontSize: { xs: '24px', md: '32px' },
+            fontWeight: 700,
+            lineHeight: '24px',
           }}
         >
-          Наші <Box component="span" sx={{ fontWeight: 400 }}>партнери</Box>
+          Торгівельні мережі{' '}
+          <Box component="span" sx={{ fontWeight: 400 }}>
+            для використання сертифіката
+          </Box>
         </Typography>
 
-        <Typography
-          variant="body1"
-          textAlign="center"
-          sx={{
-            mb: 5,
-            color: 'text.secondary',
-            maxWidth: '600px',
-            mx: 'auto',
-          }}
-        >
-          Понад 400 магазинів та сервісів по всій Україні приймають MagicCard
-        </Typography>
-
-        {/* Категорії */}
+        {/* Сітка партнерів */}
         <Box
           sx={{
             display: 'flex',
+            flexWrap: 'wrap',
             gap: 1,
             mb: 4,
-            overflowX: 'auto',
-            pb: 2,
-            '&::-webkit-scrollbar': {
-              height: '6px',
-            },
-            '&::-webkit-scrollbar-thumb': {
-              backgroundColor: 'grey.300',
-              borderRadius: '3px',
-            },
           }}
         >
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: 'secondary.main',
-              color: 'white',
-              borderRadius: '100px',
-              px: 2,
-              py: 0.5,
-              fontSize: '12px',
-              minWidth: 'auto',
-              whiteSpace: 'nowrap',
-            }}
-          >
-            Всі
-          </Button>
-          <Button
-            variant="outlined"
-            sx={{
-              borderColor: 'grey.300',
-              color: 'text.primary',
-              borderRadius: '100px',
-              px: 2,
-              py: 0.5,
-              fontSize: '12px',
-              minWidth: 'auto',
-              whiteSpace: 'nowrap',
-            }}
-          >
-            Продукти
-          </Button>
-          <Button
-            variant="outlined"
-            sx={{
-              borderColor: 'grey.300',
-              color: 'text.primary',
-              borderRadius: '100px',
-              px: 2,
-              py: 0.5,
-              fontSize: '12px',
-              minWidth: 'auto',
-              whiteSpace: 'nowrap',
-            }}
-          >
-            Все для дому
-          </Button>
-          <Button
-            variant="outlined"
-            sx={{
-              borderColor: 'grey.300',
-              color: 'text.primary',
-              borderRadius: '100px',
-              px: 2,
-              py: 0.5,
-              fontSize: '12px',
-              minWidth: 'auto',
-              whiteSpace: 'nowrap',
-            }}
-          >
-            Електроніка
-          </Button>
+          {partners.map((partner, index) => (
+            <Box
+              key={index}
+              sx={{
+                width: 'calc(50% - 4px)',
+                '@media (min-width: 600px)': {
+                  width: 'calc(25% - 6px)',
+                },
+                '@media (min-width: 900px)': {
+                  width: 'calc(16.666% - 7px)',
+                },
+              }}
+            >
+              <img
+                src={partner}
+                alt=""
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  display: 'block',
+                  borderRadius: '4px',
+                }}
+              />
+            </Box>
+          ))}
         </Box>
 
-        {/* Сітка партнерів */}
-        <Grid container spacing={2}>
-          {partners.map((partner, index) => (
-            <Grid item xs={6} sm={4} md={3} key={index}>
-              <Box
-                sx={{
-                  height: '95px',
-                  backgroundColor: partner.bgColor,
-                  border: partner.bgColor === '#FFFFFF' ? '1px solid #E9E9E9' : 'none',
-                  borderRadius: '4px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  transition: 'transform 0.2s',
-                  cursor: 'pointer',
-                  '&:hover': {
-                    transform: 'translateY(-4px)',
-                  },
-                }}
-              >
-                <Typography
-                  sx={{
-                    fontSize: '16px',
-                    fontWeight: 600,
-                    color: partner.bgColor === '#FFFFFF' || partner.bgColor === '#FDEDEF' ? '#212121' : 'white',
-                  }}
-                >
-                  {partner.name}
-                </Typography>
-              </Box>
-            </Grid>
-          ))}
-        </Grid>
-
-        {/* Кнопка показати більше */}
-        <Box sx={{ textAlign: 'center', mt: 4 }}>
+        {/* Кнопка "Показати ще" */}
+        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
           <Button
             variant="outlined"
             sx={{
-              borderColor: 'secondary.main',
-              color: 'secondary.main',
-              borderRadius: '100px',
+              borderColor: '#E56515',
+              color: '#E56515',
+              fontSize: '12px',
+              fontWeight: 700,
+              letterSpacing: '1px',
+              textTransform: 'uppercase',
+              borderRadius: '22px',
+              height: '44px',
               px: 4,
-              py: 1.5,
               '&:hover': {
-                borderColor: 'secondary.dark',
+                borderColor: '#E56515',
                 backgroundColor: 'rgba(229, 101, 21, 0.04)',
               },
             }}
