@@ -12,7 +12,7 @@ import FloatingButton from './components/FloatingButton';
 
 function App() {
   return (
-    <Box sx={{ pb: { xs: '80px', md: 0 } }}>
+    <>
       <Header />
       <Hero />
       <CompanyStats />
@@ -21,9 +21,11 @@ function App() {
       <OurClients />
       <HowToUse />
       <Certificate />
-      <Footer />
+      <Box sx={{ backgroundColor: '#F2F2F2', pb: { xs: '80px', md: 0 } }}>
+        <Footer />
+      </Box>
       <FloatingButton />
-    </Box>
+    </>
   );
 }
 

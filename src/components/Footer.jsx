@@ -24,17 +24,34 @@ function Footer() {
         </Typography>
 
         {/* Посилання */}
-        <Typography
+        <Box
           sx={{
-            textAlign: 'center',
-            color: '#533BAD',
-            fontSize: '14px',
-            fontWeight: 400,
-            lineHeight: '20px',
+            display: 'flex',
+            justifyContent: 'space-evenly',
+            alignItems: 'center',
           }}
         >
-          Договір оферти     Політика конфіденційності
-        </Typography>
+          <Typography
+            sx={{
+              color: '#533BAD',
+              fontSize: '14px',
+              fontWeight: 400,
+              lineHeight: '20px',
+            }}
+          >
+            Договір оферти
+          </Typography>
+          <Typography
+            sx={{
+              color: '#533BAD',
+              fontSize: '14px',
+              fontWeight: 400,
+              lineHeight: '20px',
+            }}
+          >
+            Політика конфіденційності
+          </Typography>
+        </Box>
       </Container>
     </Box>
   );
