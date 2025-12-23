@@ -1,14 +1,6 @@
+import { Box, Container, Typography, Button, TextField } from '@mui/material';
 import { useState } from 'react';
-import {
-  Box,
-  Container,
-  Typography,
-  TextField,
-  Button,
-  Grid,
-  ToggleButton,
-  ToggleButtonGroup,
-} from '@mui/material';
+import certificateImage from '../assets/certificate.png';
 
 const denominations = [100, 200, 500, 1000, 2000, 5000, 10000];
 
@@ -17,146 +9,162 @@ function Certificate() {
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
 
-  const handleDenominationChange = (event, newValue) => {
-    if (newValue !== null) {
-      setSelectedDenomination(newValue);
-    }
-  };
-
   return (
-    <Box
-      sx={{
-        backgroundColor: 'primary.main',
-        color: 'white',
-        py: { xs: 6, md: 10 },
-      }}
-    >
-      <Container maxWidth="lg">
+    <Box sx={{ pt: '80px', pb: '80px', backgroundColor: '#543BAD' }}>
+      <Container maxWidth="lg" sx={{ px: { xs: '16px', md: 3 } }}>
         {/* Заголовок */}
         <Typography
-          variant="h3"
+          variant="h2"
           sx={{
-            mb: 2,
+            mb: '45px',
             fontSize: { xs: '24px', md: '32px' },
+            fontWeight: 700,
+            lineHeight: '29px',
+            color: 'white',
           }}
         >
-          Як виглядає <Box component="span" sx={{ fontWeight: 400 }}>сертифікат?</Box>
+          Як виглядає сертифікат?
         </Typography>
 
+        {/* Параграф */}
         <Typography
           sx={{
-            mb: 4,
+            mb: '45px',
             fontSize: '14px',
-            lineHeight: 1.5,
-            maxWidth: '600px',
+            fontWeight: 400,
+            lineHeight: '21px',
+            color: 'white',
           }}
         >
           Оплачує покупку сертифікатом на касі магазину чи під час оформлення замовлення в інтернет-магазині без додаткових дій.
         </Typography>
 
-        {/* Зображення сертифіката */}
-        <Box
-          sx={{
-            width: '100%',
-            maxWidth: '500px',
-            height: '300px',
-            backgroundColor: 'rgba(255, 255, 255, 0.1)',
-            borderRadius: '10px',
-            mb: 3,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <Typography sx={{ color: 'white', opacity: 0.5 }}>
-            Зображення сертифіката
-          </Typography>
-        </Box>
-
-        <Box sx={{ textAlign: 'center', mb: 4 }}>
+        {/* Кнопка Активувати */}
+        <Box sx={{ mb: '44px', display: 'flex', justifyContent: 'center' }}>
           <Button
             variant="contained"
             sx={{
-              backgroundColor: 'secondary.main',
+              backgroundColor: '#E56515',
               color: 'white',
-              px: 4,
+              fontSize: '12px',
+              fontWeight: 700,
+              textTransform: 'uppercase',
+              letterSpacing: '0.24px',
+              borderRadius: '100px',
+              height: '44px',
+              px: '26px',
               '&:hover': {
-                backgroundColor: 'secondary.dark',
+                backgroundColor: '#D45510',
               },
             }}
           >
-            CTA BUTTON
+            Активувати
           </Button>
         </Box>
 
-        {/* Форма */}
+        {/* Зображення сертифіката */}
+        <Box
+          sx={{
+            mb: '58px',
+            width: '100%',
+            overflow: 'hidden',
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
+          <img
+            src={certificateImage}
+            alt="Сертифікат"
+            style={{
+              width: '100%',
+              maxWidth: '328px',
+              height: 'auto',
+              display: 'block',
+            }}
+          />
+        </Box>
+
+        {/* Форма купівлі сертифіката */}
         <Box
           sx={{
             backgroundColor: 'white',
             borderRadius: '10px',
-            p: 3,
-            maxWidth: '500px',
-            mx: { xs: 0, md: 'auto' },
+            p: '24px',
+            maxWidth: '328px',
+            mx: 'auto',
           }}
         >
+          {/* Заголовок форми */}
           <Typography
-            variant="h4"
+            variant="h3"
             sx={{
-              mb: 3,
-              color: 'text.primary',
-              textAlign: 'center',
+              mb: '16px',
               fontSize: '28px',
+              fontWeight: 700,
+              lineHeight: '34px',
+              color: '#212121',
+              textAlign: 'center',
             }}
           >
             Купити сертифікат
           </Typography>
 
-          {/* Номінал */}
-          <Box sx={{ mb: 3 }}>
+          {/* Вибір номіналу */}
+          <Box sx={{ mb: '12px' }}>
             <Typography
               sx={{
-                mb: 1,
-                color: 'text.primary',
+                mb: '8px',
                 fontSize: '14px',
+                fontWeight: 400,
+                lineHeight: '18px',
+                letterSpacing: '0.28px',
+                color: '#212121',
               }}
             >
               Оберіть номінал сертифіката (грн)*:
             </Typography>
-
-            <Grid container spacing={1}>
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
               {denominations.map((value) => (
-                <Grid item key={value}>
-                  <Button
-                    variant={selectedDenomination === value ? 'contained' : 'outlined'}
-                    onClick={() => setSelectedDenomination(value)}
-                    sx={{
-                      borderRadius: '100px',
-                      minWidth: '68px',
-                      height: '44px',
-                      fontSize: '13px',
-                      backgroundColor: selectedDenomination === value ? '#212121' : '#F2F2F2',
-                      color: selectedDenomination === value ? 'white' : '#212121',
-                      border: 'none',
-                      '&:hover': {
-                        backgroundColor: selectedDenomination === value ? '#212121' : '#E5E5E5',
-                        border: 'none',
-                      },
-                    }}
-                  >
-                    {value}
-                  </Button>
-                </Grid>
+                <Box
+                  key={value}
+                  onClick={() => setSelectedDenomination(value)}
+                  sx={{
+                    width: 'calc((100% - 24px) / 4)',
+                    height: '44px',
+                    backgroundColor:
+                      selectedDenomination === value ? '#212121' : '#F2F2F2',
+                    color: selectedDenomination === value ? 'white' : '#212121',
+                    borderRadius: '100px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: value >= 10000 ? '14px' : '13px',
+                    fontWeight: 400,
+                    lineHeight: '19px',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s',
+                    '&:hover': {
+                      backgroundColor:
+                        selectedDenomination === value ? '#212121' : '#E9E9E9',
+                    },
+                  }}
+                >
+                  {value}
+                </Box>
               ))}
-            </Grid>
+            </Box>
           </Box>
 
-          {/* Телефон */}
-          <Box sx={{ mb: 3 }}>
+          {/* Поле телефону */}
+          <Box sx={{ mb: '12px' }}>
             <Typography
               sx={{
-                mb: 0.5,
-                color: 'text.primary',
+                mb: '4px',
                 fontSize: '14px',
+                fontWeight: 400,
+                lineHeight: '18px',
+                letterSpacing: '0.28px',
+                color: '#212121',
               }}
             >
               Телефон*:
@@ -168,20 +176,41 @@ function Certificate() {
               onChange={(e) => setPhone(e.target.value)}
               sx={{
                 '& .MuiOutlinedInput-root': {
-                  borderRadius: '100px',
                   height: '44px',
+                  borderRadius: '100px',
+                  backgroundColor: 'white',
+                  fontSize: '13px',
+                  '& fieldset': {
+                    borderColor: '#E9E9E9',
+                  },
+                  '&:hover fieldset': {
+                    borderColor: '#E9E9E9',
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: '#E56515',
+                  },
+                },
+                '& .MuiOutlinedInput-input': {
+                  padding: '15px',
+                  '&::placeholder': {
+                    color: '#B2B2B2',
+                    opacity: 1,
+                  },
                 },
               }}
             />
           </Box>
 
-          {/* Email */}
-          <Box sx={{ mb: 3 }}>
+          {/* Поле email */}
+          <Box sx={{ mb: '16px' }}>
             <Typography
               sx={{
-                mb: 0.5,
-                color: 'text.primary',
+                mb: '4px',
                 fontSize: '14px',
+                fontWeight: 400,
+                lineHeight: '18px',
+                letterSpacing: '0.28px',
+                color: '#212121',
               }}
             >
               Email:
@@ -191,44 +220,78 @@ function Certificate() {
               placeholder="Ваш email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              type="email"
               sx={{
                 '& .MuiOutlinedInput-root': {
-                  borderRadius: '100px',
                   height: '44px',
+                  borderRadius: '100px',
+                  backgroundColor: 'white',
+                  fontSize: '13px',
+                  '& fieldset': {
+                    borderColor: '#E9E9E9',
+                  },
+                  '&:hover fieldset': {
+                    borderColor: '#E9E9E9',
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: '#E56515',
+                  },
+                },
+                '& .MuiOutlinedInput-input': {
+                  padding: '15px',
+                  '&::placeholder': {
+                    color: '#B2B2B2',
+                    opacity: 1,
+                  },
                 },
               }}
             />
           </Box>
 
-          {/* Сума */}
+          {/* Всього до сплати */}
           <Typography
             sx={{
-              mb: 2,
-              color: 'text.primary',
+              mb: '8px',
               fontSize: '13px',
+              fontWeight: 400,
+              lineHeight: '19px',
+              letterSpacing: '0.26px',
+              color: '#212121',
+              textAlign: 'left',
             }}
           >
             Всього до сплати:{' '}
-            <Box component="span" sx={{ fontSize: '16px', fontWeight: 700 }}>
+            <Box
+              component="span"
+              sx={{
+                fontSize: '16px',
+                fontWeight: 700,
+                letterSpacing: '0.32px',
+              }}
+            >
               {selectedDenomination}₴
             </Box>
           </Typography>
 
-          {/* Кнопка оплати */}
+          {/* Кнопка Оплатити */}
           <Button
-            variant="contained"
             fullWidth
+            variant="contained"
             sx={{
-              backgroundColor: 'secondary.main',
-              color: 'white',
               height: '44px',
+              backgroundColor: '#E56515',
+              color: 'white',
+              fontSize: '12px',
+              fontWeight: 700,
+              textTransform: 'uppercase',
+              letterSpacing: '0.24px',
               borderRadius: '100px',
               '&:hover': {
-                backgroundColor: 'secondary.dark',
+                backgroundColor: '#D45510',
               },
             }}
           >
-            ОПЛАТИТИ
+            Оплатити
           </Button>
         </Box>
       </Container>
