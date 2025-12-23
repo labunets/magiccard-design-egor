@@ -1,57 +1,40 @@
-import { Box, Container, Typography, Link } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 
 function Footer() {
   return (
     <Box
       sx={{
-        backgroundColor: 'background.grey',
-        py: 4,
+        backgroundColor: '#F2F2F2',
+        py: '24px',
       }}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{ px: { xs: '16px', md: 3 } }}>
         {/* Копірайт */}
         <Typography
-          variant="body2"
-          textAlign="center"
           sx={{
-            mb: 2,
+            textAlign: 'center',
             color: '#B2B2B2',
             fontSize: '14px',
+            fontWeight: 400,
+            lineHeight: '20px',
+            mb: '16px',
           }}
         >
           © 2025 Magic Card. Усі права захищені
         </Typography>
 
         {/* Посилання */}
-        <Box
+        <Typography
           sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: 3,
-            flexWrap: 'wrap',
+            textAlign: 'center',
+            color: '#533BAD',
+            fontSize: '14px',
+            fontWeight: 400,
+            lineHeight: '20px',
           }}
         >
-          <Link
-            href="#"
-            underline="hover"
-            sx={{
-              color: 'primary.main',
-              fontSize: '14px',
-            }}
-          >
-            Договір оферти
-          </Link>
-          <Link
-            href="#"
-            underline="hover"
-            sx={{
-              color: 'primary.main',
-              fontSize: '14px',
-            }}
-          >
-            Політика конфіденційності
-          </Link>
-        </Box>
+          Договір оферти     Політика конфіденційності
+        </Typography>
       </Container>
     </Box>
   );

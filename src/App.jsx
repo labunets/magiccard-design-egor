@@ -7,6 +7,7 @@ import WhyChoose from './components/WhyChoose';
 import OurClients from './components/OurClients';
 import HowToUse from './components/HowToUse';
 import Certificate from './components/Certificate';
+import Footer from './components/Footer';
 import FloatingButton from './components/FloatingButton';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <OurClients />
       <HowToUse />
       <Certificate />
+      <Footer />
       <FloatingButton />
     </Box>
   );
