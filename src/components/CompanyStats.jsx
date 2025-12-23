@@ -29,7 +29,7 @@ const stats = [
 
 function CompanyStats() {
   return (
-    <Box sx={{ py: { xs: 6, md: 10 }, backgroundColor: 'white' }}>
+    <Box sx={{ pt: { xs: 6, md: 10 }, pb: '40px', backgroundColor: 'white' }}>
       <Container maxWidth="lg" sx={{ px: { xs: '16px', md: 3 } }}>
         {/* Заголовок */}
         <Typography

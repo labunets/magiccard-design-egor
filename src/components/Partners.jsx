@@ -29,7 +29,7 @@ const partners = [
 
 function Partners() {
   return (
-    <Box sx={{ py: { xs: 6, md: 10 }, backgroundColor: 'white' }}>
+    <Box sx={{ pt: '40px', pb: '60px', backgroundColor: 'white' }}>
       <Container maxWidth="lg" sx={{ px: { xs: '16px', md: 3 } }}>
         {/* Заголовок */}
         <Typography
