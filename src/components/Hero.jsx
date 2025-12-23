@@ -13,7 +13,7 @@ function Hero() {
         overflow: 'hidden',
       }}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{ px: { xs: '16px', md: 3 } }}>
         <Box
           sx={{
             textAlign: 'center',

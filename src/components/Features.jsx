@@ -42,14 +42,15 @@ const features = [
 function Features() {
   return (
     <Box sx={{ py: { xs: 6, md: 10 }, backgroundColor: 'background.paper' }}>
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{ px: { xs: '16px', md: 3 } }}>
         {/* Заголовок */}
         <Typography
-          variant="h3"
+          variant="h2"
           textAlign="center"
           sx={{
             mb: 6,
             fontSize: { xs: '24px', md: '32px' },
+            lineHeight: '24px',
           }}
         >
           Чому обирають <Box component="span" sx={{ fontWeight: 400 }}>MagicCard?</Box>
