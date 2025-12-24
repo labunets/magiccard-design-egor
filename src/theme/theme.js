@@ -43,9 +43,9 @@ const theme = createTheme({
       lineHeight: 1.2,
     },
     h2: {
-      fontSize: '28px',
+      fontSize: '40px',
       fontWeight: 700,
-      lineHeight: 1.2,
+      lineHeight: '48px',
     },
     h3: {
       fontSize: '24px',

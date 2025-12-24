@@ -17,9 +17,7 @@ function Certificate() {
           variant="h2"
           sx={{
             mb: '45px',
-            fontSize: { xs: '24px', md: '32px' },
             fontWeight: 700,
-            lineHeight: '29px',
             color: 'white',
           }}
         >

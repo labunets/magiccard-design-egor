@@ -65,7 +65,7 @@ const reasons = [
 
 function WhyChoose() {
   return (
-    <Box sx={{ pt: '60px', pb: { xs: 6, md: 10 }, backgroundColor: '#F2F2F2' }}>
+    <Box sx={{ pt: { xs: '60px', md: '80px' }, pb: { xs: '40px', md: '80px' }, backgroundColor: '#F2F2F2' }}>
       <Container maxWidth="lg" sx={{ px: { xs: '16px', md: 3 } }}>
         {/* Заголовок */}
         <Typography
@@ -73,9 +73,7 @@ function WhyChoose() {
           textAlign="center"
           sx={{
             mb: 4,
-            fontSize: { xs: '24px', md: '32px' },
             fontWeight: 700,
-            lineHeight: '24px',
           }}
         >
           Чому варто вибрати{' '}

@@ -29,7 +29,7 @@ const partners = [
 
 function Partners() {
   return (
-    <Box sx={{ pt: '40px', pb: '60px', backgroundColor: 'white' }}>
+    <Box sx={{ pt: { xs: '40px', md: '80px' }, pb: { xs: '60px', md: '80px' }, backgroundColor: 'white' }}>
       <Container maxWidth="lg" sx={{ px: { xs: '16px', md: 3 } }}>
         {/* Заголовок */}
         <Typography
@@ -37,9 +37,7 @@ function Partners() {
           textAlign="left"
           sx={{
             mb: 4,
-            fontSize: { xs: '24px', md: '32px' },
             fontWeight: 700,
-            lineHeight: '24px',
           }}
         >
           Торгівельні мережі{' '}
