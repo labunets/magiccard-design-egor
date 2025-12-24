@@ -80,10 +80,10 @@ function CompanyStats() {
               {/* Число */}
               <Typography
                 sx={{
-                  fontSize: '48px',
+                  fontSize: { xs: '48px', md: '80px' },
                   fontWeight: 700,
                   color: '#212121',
-                  lineHeight: '48px',
+                  lineHeight: { xs: '48px', md: '80px' },
                   whiteSpace: 'nowrap',
                 }}
               >
@@ -93,10 +93,10 @@ function CompanyStats() {
               {/* Опис */}
               <Typography
                 sx={{
-                  fontSize: '14px',
+                  fontSize: { xs: '14px', md: '16px' },
                   color: 'text.secondary',
                   minHeight: '20px',
-                  lineHeight: '20px',
+                  lineHeight: { xs: '20px', md: '24px' },
                   wordBreak: 'break-word',
                 }}
               >
