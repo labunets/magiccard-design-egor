@@ -39,13 +39,17 @@ function Header() {
       }}
     >
       <Container maxWidth="lg">
-        <Toolbar disableGutters sx={{ justifyContent: 'space-between', minHeight: '90px !important' }}>
+        <Toolbar disableGutters sx={{ justifyContent: 'space-between', minHeight: { xs: '64px !important', md: '90px !important' } }}>
           {/* Логотип та слоган */}
           <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: '11px', md: '25px' } }}>
-            <img
+            <Box
+              component="img"
               src={logo}
               alt="MagicCard"
-              style={{ width: '178px', height: '35px' }}
+              sx={{
+                width: { xs: '123px', md: '178px' },
+                height: 'auto',
+              }}
             />
             {/* Вертикальний роздільник */}
             <Box
@@ -171,7 +175,7 @@ function Header() {
           <Divider sx={{ my: 2 }} />
 
           {/* Кнопка активації в меню */}
-          <Box sx={{ px: 3, pb: 3 }}>
+          <Box sx={{ px: 2, pb: 3 }}>
             <Button
               variant="contained"
               fullWidth
@@ -185,9 +189,9 @@ function Header() {
                 color: 'white',
                 height: '44px',
                 borderRadius: '22px',
-                fontSize: '12px',
+                fontSize: '10px',
                 fontWeight: 700,
-                letterSpacing: '1px',
+                letterSpacing: '0.5px',
                 textTransform: 'uppercase',
                 boxShadow: 'none',
                 '&:hover': {

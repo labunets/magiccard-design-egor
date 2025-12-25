@@ -41,9 +41,10 @@ function HowToUse() {
 
     const handleScroll = () => {
       const scrollLeft = container.scrollLeft;
-      const cardWidth = container.offsetWidth - 32; // Ширина контейнера мінус padding
-      const newIndex = Math.round(scrollLeft / cardWidth);
-      setActiveIndex(newIndex);
+      const containerWidth = container.offsetWidth;
+      // Обчислюємо індекс на основі того, яка картка найближча до центру viewport
+      const newIndex = Math.round(scrollLeft / containerWidth);
+      setActiveIndex(Math.min(newIndex, steps.length - 1));
     };
 
     container.addEventListener('scroll', handleScroll);
