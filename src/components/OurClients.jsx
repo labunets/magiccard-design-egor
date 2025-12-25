@@ -40,17 +40,19 @@ function OurClients() {
             display: 'flex',
             flexWrap: 'wrap',
             gap: '40px',
+            alignItems: 'center',
+            justifyContent: 'center',
           }}
         >
           {clients.map((client, index) => (
             <Box
               key={index}
               sx={{
-                width: { xs: 'calc(50% - 20px)', md: 'calc(33.333% - 26.67px)' },
+                width: { xs: 'calc(50% - 20px)', md: '300px' },
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                height: { xs: '70px', md: '90px' },
+                height: { xs: '70px', md: '132px' },
               }}
             >
               <img
