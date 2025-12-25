@@ -12,12 +12,12 @@ const stats = [
   },
   {
     icon: casesIcon,
-    number: '250+',
-    description: 'задоволених клієнтів',
+    number: '400+',
+    description: 'партнерськіх мереж',
   },
   {
     icon: thumbUpIcon,
-    number: '250+',
+    number: '5k+',
     description: 'задоволених клієнтів',
   },
   {
