@@ -9,48 +9,65 @@ function Footer() {
       }}
     >
       <Container maxWidth="lg" sx={{ px: { xs: '16px', md: 3 } }}>
-        {/* Копірайт */}
-        <Typography
-          sx={{
-            textAlign: 'center',
-            color: '#B2B2B2',
-            fontSize: '14px',
-            fontWeight: 400,
-            lineHeight: '20px',
-            mb: '16px',
-          }}
-        >
-          © 2025 Magic Card. Усі права захищені
-        </Typography>
-
-        {/* Посилання */}
         <Box
           sx={{
             display: 'flex',
-            justifyContent: 'space-evenly',
+            flexDirection: { xs: 'column', md: 'row' },
+            justifyContent: { xs: 'center', md: 'space-between' },
             alignItems: 'center',
+            gap: { xs: '16px', md: 0 },
           }}
         >
+          {/* Копірайт */}
           <Typography
             sx={{
-              color: '#533BAD',
+              textAlign: { xs: 'center', md: 'left' },
+              color: '#B2B2B2',
               fontSize: '14px',
               fontWeight: 400,
               lineHeight: '20px',
             }}
           >
-            Договір оферти
+            © 2025 Magic Card. Усі права захищені
           </Typography>
-          <Typography
+
+          {/* Посилання */}
+          <Box
             sx={{
-              color: '#533BAD',
-              fontSize: '14px',
-              fontWeight: 400,
-              lineHeight: '20px',
+              display: 'flex',
+              gap: { xs: '40px', md: '40px' },
+              alignItems: 'center',
             }}
           >
-            Політика конфіденційності
-          </Typography>
+            <Typography
+              sx={{
+                color: '#533BAD',
+                fontSize: '14px',
+                fontWeight: 400,
+                lineHeight: '20px',
+                cursor: 'pointer',
+                '&:hover': {
+                  textDecoration: 'underline',
+                },
+              }}
+            >
+              Договір оферти
+            </Typography>
+            <Typography
+              sx={{
+                color: '#533BAD',
+                fontSize: '14px',
+                fontWeight: 400,
+                lineHeight: '20px',
+                cursor: 'pointer',
+                '&:hover': {
+                  textDecoration: 'underline',
+                },
+              }}
+            >
+              Політика конфіденційності
+            </Typography>
+          </Box>
         </Box>
       </Container>
     </Box>
