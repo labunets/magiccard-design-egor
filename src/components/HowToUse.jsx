@@ -36,9 +36,6 @@ function HowToUse() {
     const container = scrollContainerRef.current;
     if (!container) return;
 
-    // Scroll listener тільки для мобільних пристроїв
-    if (window.innerWidth >= 900) return;
-
     const handleScroll = () => {
       const scrollLeft = container.scrollLeft;
       const containerWidth = container.offsetWidth;
