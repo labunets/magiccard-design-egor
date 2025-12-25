@@ -36,6 +36,9 @@ function HowToUse() {
     const container = scrollContainerRef.current;
     if (!container) return;
 
+    // Scroll listener тільки для мобільних пристроїв
+    if (window.innerWidth >= 900) return;
+
     const handleScroll = () => {
       const scrollLeft = container.scrollLeft;
       const cardWidth = container.offsetWidth - 32; // Ширина контейнера мінус padding
@@ -70,9 +73,10 @@ function HowToUse() {
           ref={scrollContainerRef}
           sx={{
             display: 'flex',
-            overflowX: 'scroll',
-            scrollSnapType: 'x mandatory',
-            gap: 2,
+            overflowX: { xs: 'scroll', md: 'visible' },
+            scrollSnapType: { xs: 'x mandatory', md: 'none' },
+            flexWrap: { md: 'wrap' },
+            gap: { xs: 2, md: '30px' },
             pb: 2,
             mb: 3,
             // Приховуємо скролбар
@@ -87,45 +91,99 @@ function HowToUse() {
             <Box
               key={index}
               sx={{
-                minWidth: 'calc(100% - 32px)',
-                scrollSnapAlign: 'start',
+                minWidth: { xs: 'calc(100% - 32px)', md: 'auto' },
+                width: {
+                  xs: 'calc(100% - 32px)',
+                  md: index === 3 ? '100%' : 'calc(33.333% - 20px)'
+                },
+                scrollSnapAlign: { xs: 'start', md: 'none' },
                 backgroundColor: '#F7F7F7',
                 borderRadius: '4.67px',
                 overflow: 'hidden',
                 display: 'flex',
-                flexDirection: 'column',
+                flexDirection: {
+                  xs: 'column',
+                  md: index === 3 ? 'row' : 'column'
+                },
               }}
             >
               {/* Текстовий блок */}
-              <Box sx={{ p: '24px', pb: '12px' }}>
-                <Typography
-                  variant="h3"
-                  sx={{
-                    fontSize: '18px',
-                    fontWeight: 700,
-                    color: '#212121',
-                    lineHeight: '20px',
-                    mb: '6px',
-                  }}
-                >
-                  {step.title}
-                </Typography>
-                <Typography
-                  sx={{
-                    fontSize: '13px',
-                    color: '#595959',
-                    lineHeight: '19px',
-                  }}
-                >
-                  {step.description}
-                </Typography>
+              <Box sx={{
+                p: { xs: '24px', md: index === 3 ? 0 : '24px' },
+                pb: { xs: '12px', md: index === 3 ? 0 : '12px' },
+                width: { xs: '100%', md: index === 3 ? '50%' : '100%' },
+                display: { md: index === 3 ? 'flex' : 'block' },
+                flexDirection: { md: index === 3 ? 'column' : 'row' },
+                justifyContent: { md: index === 3 ? 'center' : 'flex-start' },
+                alignItems: { md: index === 3 ? 'center' : 'flex-start' },
+              }}>
+                {index === 3 ? (
+                  <Box sx={{
+                    width: { xs: '100%', md: '290px' },
+                    height: { xs: 'auto', md: '114px' },
+                    display: { md: 'flex' },
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'flex-start',
+                  }}>
+                    <Typography
+                      variant="h3"
+                      sx={{
+                        fontSize: '22px',
+                        fontWeight: 700,
+                        color: '#212121',
+                        lineHeight: '22px',
+                        mb: '6px',
+                        textAlign: 'left',
+                      }}
+                    >
+                      {step.title}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontSize: '14px',
+                        color: '#595959',
+                        lineHeight: '20px',
+                        textAlign: 'left',
+                      }}
+                    >
+                      {step.description}
+                    </Typography>
+                  </Box>
+                ) : (
+                  <>
+                    <Typography
+                      variant="h3"
+                      sx={{
+                        fontSize: '22px',
+                        fontWeight: 700,
+                        color: '#212121',
+                        lineHeight: '22px',
+                        mb: '6px',
+                      }}
+                    >
+                      {step.title}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontSize: '14px',
+                        color: '#595959',
+                        lineHeight: '20px',
+                      }}
+                    >
+                      {step.description}
+                    </Typography>
+                  </>
+                )}
               </Box>
 
               {/* Зображення */}
               <Box
                 sx={{
-                  mt: 'auto',
-                  width: '100%',
+                  mt: { xs: 'auto', md: index === 3 ? 0 : 'auto' },
+                  width: { xs: '100%', md: index === 3 ? '50%' : '100%' },
+                  display: 'flex',
+                  alignItems: { md: index === 3 ? 'center' : 'flex-start' },
                 }}
               >
                 <img
@@ -145,7 +203,7 @@ function HowToUse() {
         {/* Пагінація */}
         <Box
           sx={{
-            display: 'flex',
+            display: { xs: 'flex', md: 'none' },
             justifyContent: 'center',
             alignItems: 'center',
             gap: 0.5,
