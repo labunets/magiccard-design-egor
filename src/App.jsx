@@ -7,6 +7,7 @@ import WhyChoose from './components/WhyChoose';
 import OurClients from './components/OurClients';
 import HowToUse from './components/HowToUse';
 import Certificate from './components/Certificate';
+import BuyCertificate from './components/BuyCertificate';
 import Footer from './components/Footer';
 import FloatingButton from './components/FloatingButton';
 
@@ -21,6 +22,7 @@ function App() {
       <OurClients />
       <HowToUse />
       <Certificate />
+      <BuyCertificate />
       <Box sx={{ backgroundColor: '#F2F2F2', pb: { xs: '80px', md: 0 } }}>
         <Footer />
       </Box>
