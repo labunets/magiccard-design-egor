@@ -45,12 +45,12 @@ function Partners() {
                   md: 'calc(20% - 16px)',
                 },
                 // Якщо showAll - показуємо всі
-                // Якщо ні - показуємо 12 на xs, 20 на md+
+                // Якщо ні - показуємо 20 на xs, 50 на md+
                 display: showAll
                   ? 'block'
-                  : index < 12
-                  ? 'block'
                   : index < 20
+                  ? 'block'
+                  : index < 50
                   ? { xs: 'none', md: 'block' }
                   : 'none',
               }}
