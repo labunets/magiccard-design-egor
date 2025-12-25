@@ -86,7 +86,9 @@ function WhyChoose() {
         <Box
           sx={{
             display: 'flex',
-            flexDirection: 'column',
+            flexDirection: { xs: 'column', md: 'row' },
+            flexWrap: { md: 'wrap' },
+            justifyContent: { md: 'center' },
             gap: 2,
           }}
         >
@@ -94,6 +96,7 @@ function WhyChoose() {
             <Box
               key={index}
               sx={{
+                width: { xs: '100%', md: 'calc(25% - 12px)' },
                 backgroundColor: 'white',
                 borderRadius: '8px',
                 padding: '24px',
@@ -103,7 +106,7 @@ function WhyChoose() {
               }}
             >
               {/* Іконка */}
-              <Box sx={{ mb: 2 }}>
+              <Box sx={{ mb: '16px' }}>
                 <img
                   src={reason.icon}
                   alt=""
@@ -115,11 +118,11 @@ function WhyChoose() {
               <Typography
                 variant="h3"
                 sx={{
-                  fontSize: '18px',
+                  fontSize: '22px',
                   fontWeight: 700,
                   color: '#212121',
-                  lineHeight: '18px',
-                  mb: 1,
+                  lineHeight: '26px',
+                  mb: '16px',
                 }}
               >
                 {reason.title}
@@ -128,9 +131,9 @@ function WhyChoose() {
               {/* Опис */}
               <Typography
                 sx={{
-                  fontSize: '13px',
+                  fontSize: '14px',
                   color: '#595959',
-                  lineHeight: '19px',
+                  lineHeight: '20px',
                 }}
               >
                 {reason.description}

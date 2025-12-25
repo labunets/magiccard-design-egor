@@ -99,6 +99,10 @@ function Hero() {
                   paddingRight: '5px',
                   paddingTop: 0,
                   paddingBottom: 0,
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.24px',
                   '& .MuiButton-endIcon': {
                     marginRight: 0,
                     marginLeft: '8px',
