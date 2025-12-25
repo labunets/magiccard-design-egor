@@ -112,7 +112,7 @@ function BuyCertificate() {
                   height: '44px',
                   borderRadius: '100px',
                   backgroundColor: 'white',
-                  fontSize: '13px',
+                  fontSize: { xs: '16px', md: '13px' },
                   '& fieldset': {
                     borderColor: '#E9E9E9',
                   },
@@ -159,7 +159,7 @@ function BuyCertificate() {
                   height: '44px',
                   borderRadius: '100px',
                   backgroundColor: 'white',
-                  fontSize: '13px',
+                  fontSize: { xs: '16px', md: '13px' },
                   '& fieldset': {
                     borderColor: '#E9E9E9',
                   },
